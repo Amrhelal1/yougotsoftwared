@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Topic Listing Page</title>
+        <title>hospital</title>
 
         <!-- CSS FILES -->        
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,7 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <link href="css/bootstrap-icons.css" rel="stylesheet">
-
+ 
         <link href="css/templatemo-topic-listing.css" rel="stylesheet">
 <!--
 
@@ -99,64 +99,193 @@ https://templatemo.com/tm-590-topic-listing
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Homepage</a></li>
 
-                                    <li class="breadcrumb-item active" aria-current="page">Topics Listing</li>
+                                    <li class="breadcrumb-item active" aria-current="page">medical cases </li>
                                 </ol>
                             </nav>
 
-                            <h2 class="text-white">food list</h2>
+                            <h2 class="text-white">Medical Cases </h2>
                         </div>
-
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                          <meta charset="UTF-8">
+                          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                          <title>medical cases Filters</title>
+                          <style>
+                            /* Add CSS styles for better presentation */
+                            body {
+                              font-family: Arial, sans-serif;
+                              line-height: 1.6;
+                              margin: 0;
+                              padding: 0;
+                            }
+                            .container {
+                              max-width: 800px;
+                              margin: 20px auto;
+                              padding: 0 20px;
+                            }
+                            h1 {
+                              text-align: center;
+                            }
+                            select {
+                              width: 100%;
+                              padding: 10px;
+                              margin-bottom: 20px;
+                            }
+                          </style>
+                        </head>
+                        <body>
+                          <div class="container">
+                            <h1>Medical Cases Filters</h1>
+                           
+                                specialty:</label>
+                            <select id="subjectSelect" onchange="filterTeachingPosts()">
+                              <option value="">All specialties</option>
+                              <option value="math">cardiology</option>
+                              <option value="science">internal medecine</option>
+                           
+                              <!-- Add more options for additional subjects -->
+                            </select>
+                            <label for="areaSelect">Select Area:</label>
+                            <select id="areaSelect" onchange="filterTeachingPosts()">
+                              <option value="">All Areas</option>
+                              <option value="area1">tanta</option>
+                              <option value="area2">cairo</option>
+                              <!-- Add more options for additional areas -->
+                            </select>
+                            <label for="governorateSelect">Select Governorate:</label>
+                            <select id="governorateSelect" onchange="filterTeachingPosts()">
+                              <option value="">All Governorates</option>
+                              <option value="governorate1">tanta</option>
+                              <option value="governorate2">cairo</option>
+                              <!-- Add more options for additional governorates -->
+                            </select>
+                            <label for="governorateSelect">Select Organization:</label>
+                            <select id="governorateSelect" onchange="filterTeachingPosts()">
+                              <option value="">All Organizations</option>
+                              <option value="governorate1">CMC</option>
+                              <option value="governorate2">Air force hospital</option>
+                            </select>
+                        
+                            <!-- Placeholder for filtered teaching posts -->
+                            <div id="filteredTeachingPosts">
+                              <!-- Filtered teaching posts will be displayed here -->
+                            </div>
+                          </div>
+                        
+                          <script>
+                            // Function to filter teaching posts based on selected filters
+                            function filterTeachingPosts() {
+                              var subject = document.getElementById("subjectSelect").value;
+                              var area = document.getElementById("areaSelect").value;
+                              var governorate = document.getElementById("governorateSelect").value;
+                        
+                              // Placeholder for filtered teaching posts (replace with actual data)
+                              var filteredTeachingPosts = [
+                                { subject: "math", area: "area1", governorate: "governorate1", title: "medical case 1 (cmc organization)" },
+                                { subject: "science", area: "area2", governorate: "governorate2", title: "medical case 2 (air Force organization)" },
+                                // Add more teaching posts with corresponding subject, area, and governorate
+                              ];
+                        
+                              // Filter teaching posts based on selected filters
+                              var result = filteredTeachingPosts.filter(function(post) {
+                                return (subject === "" || post.subject === subject) &&
+                                       (area === "" || post.area === area) &&
+                                       (governorate === "" || post.governorate === governorate);
+                              });
+                        
+                              // Display filtered teaching posts
+                              var filteredPostsHtml = "<h2>Filtered Medical Posts</h2>";
+                              if (result.length > 0) {
+                                filteredPostsHtml += "<ul>";
+                                result.forEach(function(post) {
+                                  filteredPostsHtml += "<li>" + post.title + "</li>";
+                                });
+                                filteredPostsHtml += "</ul>";
+                              } else {
+                                filteredPostsHtml += "<p>No teaching posts found.</p>";
+                              }
+                              document.getElementById("filteredTeachingPosts").innerHTML = filteredPostsHtml;
+                            }
+                          </script>
+                        </body>
+                        </html>
+                        
                     </div>
                 </div>
             </header>
 
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Teaching Posts</title>
+              <style>
+                /* Add CSS styles for better presentation */
+                body {
+                  font-family: Arial, sans-serif;
+                  line-height: 1.6;
+                  margin: 0;
+                  padding: 0;
+                }
+                .container {
+                  max-width: 800px;
+                  margin: 20px auto;
+                  padding: 0 20px;
+                }
+                h1 {
+                  text-align: center;
+                }
+                ul {
+                  list-style-type: none;
+                  padding: 0;
+                }
+                li {
+                  margin-bottom: 20px;
+                  border: 1px solid #ccc;
+                  padding: 10px;
+                }
+              </style>
+            </head>
+            <body>
+              <div class="container">
+                <h1>Medical cases</h1>
+                <ul>
+                  <li>
+                    <h2>Organization: CMC </h2>
+                    <p><strong>Case:</strong> chest pain</p>
+                   
+                  <a href="MedicalDetails.html" class="btn custom-btn mt-3 mt-lg-4">view</a>
+                  <li>
+                    
 
-            <section class="section-padding">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-12 col-12 text-center">
-                            <h3 class="mb-4">baked goods</h3>
-                        </div>
-
-                        <div class="col-lg-8 col-12 mt-3 mx-auto">
-                            <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
-                                <div class="d-flex">
-                                    <img src="images/topics/undraw_Remote_design_team_re_urdx.png" class="custom-block-image img-fluid" alt="">
-
-                                    <div class="custom-block-topics-listing-info d-flex">
-                                        <div>
-                                            <h5 class="mb-2">buns</h5>
-
-                                            <p class="mb-0">Quantity: 5 peices   
-                                                <br>      
-                                                price:15 egp
-                                            </p>
-                                            
-
-                                            <a href="FoodDetails.html" "></a>
+                    <h2>Organization: Air Force Hospital</h2>
+                    <p><strong>Case:</strong> myrocardial infraction </p>
+                   
+                  <a href="MedicalDetails1.html" class="btn custom-btn mt-3 mt-lg-4">view</a>
+                  <!-- Add more <li> elements for additional teaching posts -->
+                </ul>
+              </div>
+            </body>
+            </html>
+            
+            
+                            </body>
+                            </html>
+                                   
 
                                         </div>
 
-                                        <span class="badge bg-design rounded-pill ms-auto">1</span>
+                                        <span class="badge bg-design rounded-pill ms-auto"></span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
-                                <div class="d-flex">
-                                    <img src="images/topics/undraw_online_ad_re_ol62.png" class="custom-block-image img-fluid" alt="">
-
-                                    <div class="custom-block-topics-listing-info d-flex">
-                                        <div>
-                                            <h5 class="mb-2">cookies </h5>
-
-                                            <p class="mb-0">quantity: 4 pieces <br> price: 30 egp</p>
-
-                                            <a  class="-btn mt-3 mt-lg-4"> </a>
+                            
                                         </div>
 
-                                        <span class="badge bg-advertising rounded-pill ms-auto">2</span>
+                                        <span class="badge bg-advertising rounded-pill ms-auto"></span>
                                     </div>
                                 </div>
                             </div>
@@ -168,38 +297,12 @@ https://templatemo.com/tm-590-topic-listing
                         </div>
 
                         <div class="col-lg-12 col-12">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-center mb-0">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">Prev</span>
-                                        </a>
+                            <n]
+
                                     </li>
 
-                                    <li class="page-item active" aria-current="page">
-                                        <a class="page-link" href="#">1</a>
-                                    </li>
+                                   
                                     
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">2</a>
-                                    </li>
-                                    
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">3</a>
-                                    </li>
-
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">4</a>
-                                    </li>
-
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">5</a>
-                                    </li>
-                                    
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">Next</span>
-                                        </a>
                                     </li>
                                 </ul>
                             </nav>
